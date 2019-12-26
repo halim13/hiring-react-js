@@ -1,0 +1,58 @@
+.order-by {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.order-by .drop {
+  margin-right: 10px;
+}
+
+.mainContents {
+  margin: 20px auto;
+  columns: 5;
+  column-gap: 10px;
+}
+
+.mainContents .card {
+  width: 100%;
+  margin: 0 0 20px;
+  overflow: hidden;
+  break-inside: avoid;
+}
+
+.pagination {
+  justify-content: center;
+}
+
+.loading div:after {
+  /* background-color: #000; */
+}
+
+@media (max-width: 1300px) {
+  .mainContents {
+    columns: 4;
+    width: calc(100% - 40px);
+    box-sizing: border-box;
+    padding: 20px 20px 20px 0;
+  }
+}
+
+@media (max-width: 950px) {
+  .mainContents {
+    columns: 3;
+    padding: 20px 20px 20px 0;
+  }
+}
+@media (max-width: 700px) {
+  .mainContents {
+    columns: 2;
+    padding: 20px 20px 20px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .mainContents {
+    columns: 1;
+    padding: 20px 20px 20px 0;
+  }
+}

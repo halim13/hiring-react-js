@@ -1,0 +1,127 @@
+.header {
+  /* position: fixed;
+  top: 0;
+  transition: top 0.3s; */
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #fff;
+  border-bottom: 4px solid #dadada;
+  margin-bottom: 30px;
+}
+.logo img {
+  height: 80px;
+}
+.search {
+  display: flex;
+  /* margin-top: 10px; */
+  width: 100%;
+  margin-left: 20px;
+  color: #9b9b9b;
+}
+.search .logoSearch {
+  position: relative;
+  left: 32px;
+  top: 11px;
+  font-size: 20px;
+}
+.search .formSearch {
+  color: #9b9b9b;
+  background-color: #dadada;
+  border-radius: 10px;
+  padding-left: 40px;
+  height: 43px;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.navigation {
+  align-items: center;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  margin-right: 20px;
+}
+.navigation li {
+  padding-top: 10px;
+  margin-left: 40px;
+  text-decoration: none;
+}
+
+.navigation li a {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+}
+
+.navigation li .diff {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.navigation li span {
+  color: #9b9b9b;
+}
+.navigation #dropdown-home {
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+}
+.navigation .div {
+  font-size: 35px;
+  color: black;
+  margin: 0 5px;
+}
+.navigation .dropMenu a {
+  font-weight: 100;
+  color: black;
+}
+.navigation #dropdown-home::after {
+  content: none;
+}
+.navigation li .profile {
+  margin-right: 10px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50px;
+}
+.navigation li .divider {
+  height: 50px;
+  width: 1px;
+  color: #fff;
+  border: 1px solid #dadada;
+  background-color: #dadada;
+}
+.navigation .icons {
+  font-size: 40px;
+  margin-top: 5px;
+  color: #9b9b9b;
+}
+
+@media (max-width: 800px) {
+  .nameUser {
+    display: none;
+  }
+
+  .navigation li {
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .nameUser {
+    display: none;
+  }
+
+  .navigation li {
+    margin-left: 10px;
+  }
+}

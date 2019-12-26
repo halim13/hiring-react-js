@@ -1,0 +1,51 @@
+.mainContent .cardItem {
+  font-weight: 500;
+  border-radius: 35px;
+  /* width: 16rem; */
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.mainContent .cardItem .cardBody {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+}
+
+.mainContent .cardItem .cardBottom {
+  margin: 0;
+  padding: 20px;
+  border-radius: 0 0 30px 30px;
+  background-color: rgba(29, 28, 28, 0.678);
+}
+
+.mainContent .cardItem .cardBottom .cardName {
+  font-weight: bold;
+}
+.mainContent .cardItem .cardBottom .link-name {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+.mainContent .cardItem .cardBottom .link-name:hover {
+  text-decoration: underline;
+}
+.mainContent .cardItem .cardBottom .email,
+.mainContent .cardItem .cardBottom .salary {
+  display: flex;
+}
+
+.mainContent .cardItem .cardBottom .email i,
+.mainContent .cardItem .cardBottom .salary i {
+  margin-right: 5px;
+}
+.mainContent .cardItem .cardBottom .email p,
+.mainContent .cardItem .cardBottom .skills,
+.mainContent .cardItem .cardBottom .salary p {
+  line-height: initial;
+  color: #fff;
+}
+
+.mainContent .cardItem .cardBottom .email {
+  margin-right: 20px;
+}
