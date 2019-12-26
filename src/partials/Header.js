@@ -105,7 +105,7 @@ class Header extends Component {
             <img src={LogoArkademy} alt='' />
           </Link>
         </div>
-        {this.state.showMenu?
+        {/* {this.state.showMenu? */}
         <div className='search'>
           <i className='fa fa-search logoSearch'></i>
           <FormControl
@@ -115,7 +115,7 @@ class Header extends Component {
             onChange={this.handleOnInputChange}
           />
         </div>
-        :<div className='search'></div>}
+        {/* :<div className='search'></div>} */}
         
         <ul className='navigation'>
           <li>
