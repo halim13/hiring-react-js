@@ -105,7 +105,8 @@ class Header extends Component {
             <img src={LogoArkademy} alt='' />
           </Link>
         </div>
-        {this.state.role?<div className='search'>
+        {/* {this.state.showMenu? */}
+        <div className='search'>
           <i className='fa fa-search logoSearch'></i>
           <FormControl
             className='formSearch'
@@ -113,7 +114,8 @@ class Header extends Component {
             aria-describedby='basic-addon1'
             onChange={this.handleOnInputChange}
           />
-        </div>:<div className='search'></div>}
+        </div>
+        {/* :<div className='search'></div>} */}
         
         <ul className='navigation'>
           <li>
