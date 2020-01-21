@@ -11,8 +11,8 @@ const singleCompany = (state = initialState, action) => {
     case 'FETCH_SINGLE_DATA_COMPANY_REJECTED':
     case 'UPDATE_DATA_COMPANY_PENDING':
     case 'UPDATE_DATA_COMPANY_REJECTED':
-      case 'DELETE_DATA_COMPANY_PENDING':
-      case 'DELETE_DATA_COMPANY_REJECTED':
+    case 'DELETE_DATA_COMPANY_PENDING':
+    case 'DELETE_DATA_COMPANY_REJECTED':
       return {
         ...state,
         isLoading: true,
@@ -31,13 +31,13 @@ const singleCompany = (state = initialState, action) => {
         isLoading: false,
         isLoadingFirst: false,
       };
-      case 'DELETE_DATA_COMPANY_FULFILLED':
-        return {
-          ...state,
-          items: action.payload.data.data,
-          isLoading: false,
-          isLoadingFirst: false,
-        };
+    case 'DELETE_DATA_COMPANY_FULFILLED':
+      return {
+        ...state,
+        items: action.payload.data.data,
+        isLoading: false,
+        isLoadingFirst: false,
+      };
     default:
       return state;
   }

@@ -21,9 +21,7 @@ export const updateCompany = (id, data, config) => ({
   ),
 });
 
-export const deleteCompany = (id) => ({
+export const deleteCompany = id => ({
   type: 'DELETE_DATA_COMPANY',
-  payload: axios.delete(
-    `${process.env.REACT_APP_API_URL}company/${id}`
-  ),
+  payload: axios.delete(`${process.env.REACT_APP_API_URL}company/${id}`),
 });
