@@ -7,8 +7,9 @@ ReactJS is A JavaScript library for building user interfaces. [More about ReactJ
 
 ## Requirements
 1. <a href="https://nodejs.org/en/download/">Node Js</a>
-2. Node_modules
-3. Web Browser (ex. Chrome/Firefox)
+2. backend API using [ExpressJS](https://github.com/halim13/hiring-app)
+3. Node_modules
+4. Web Browser (ex. Chrome/Firefox)
 
 ## How to run the app ?
 To run Hiring Channel App, follow these steps:
