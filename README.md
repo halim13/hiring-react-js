@@ -35,6 +35,16 @@ To contribute to Hiring Channel App, follow these steps:
 
 Alternatively see the GitHub documentation on [creating a pull request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
 
+## Screenshots
+<div align="center">
+    <img width="250" src="./public/screenshoots/login.png">
+    <img width="250" src="./public/screenshoots/register.png">
+    <img width="250" src="./public/screenshoots/engineerHome.png">
+    <img width="250" src="./public/screenshoots/company.png">
+    <img width="250" src="./public/screenshoots/engineerProfile.png">
+    <img width="250" src="./public/screenshoots/engineerEdit.png">
+</div>
+
 ## Contact
 
 If you want to contact me you can reach me at <hasanudinhalim@gmail.com>.

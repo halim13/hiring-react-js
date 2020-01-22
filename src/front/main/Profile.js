@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Header from '../../partials/Header';
-import Footer from '../../partials/Footer';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
-import Loader from '../../partials/Loader';
-import jwt from 'jwt-decode';
 import { Link } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
+import jwt from 'jwt-decode';
+import Header from '../../partials/Header';
+import Footer from '../../partials/Footer';
+import Loader from '../../partials/Loader';
 import '../engineers/SingleEngineers';
 import ProfileCompany from './ProfileCompany';
 import ProfileEngineer from './ProfileEngineer';
@@ -24,18 +24,10 @@ class Profile extends Component {
       isLoading: true,
     };
   }
-  sleep = milliseconds => {
-    return new Promise(resolve => setTimeout(resolve, milliseconds));
-  };
-  wait = async (milliseconds = 400) => {
-    await this.sleep(milliseconds);
-    this.setState({
-      isLoading: false,
-    });
-  };
+
   componentDidMount() {
     this.wait(400);
-    const { history } = this.props;
+    const {history} = this.props;
     const token = localStorage.getItem('token');
     if (!token) {
       history.push('/login');
@@ -45,14 +37,9 @@ class Profile extends Component {
       axios
         .get(`${process.env.REACT_APP_API_URL}/${user.role}/${user.id}`)
         .then(res => {
-          const data =
-            user.role === 'engineer'
-              ? res.data.engineersData[0]
-              : res.data.data[0];
+          const data = user.role === 'engineer' ? res.data.engineersData[0] : res.data.data[0];
           const photo =
-            user.role === 'engineer'
-              ? res.data.engineersData[0].photo
-              : res.data.data[0].logo;
+            user.role === 'engineer' ? res.data.engineersData[0].photo : res.data.data[0].logo;
           this.setState({
             items: data,
             photo,
@@ -67,14 +54,24 @@ class Profile extends Component {
         });
     }
   }
+
+  sleep = milliseconds => {
+    return new Promise(resolve => setTimeout(resolve, milliseconds));
+  };
+
+  wait = async (milliseconds = 400) => {
+    await this.sleep(milliseconds);
+    this.setState({
+      isLoading: false,
+    });
+  };
+
   render() {
     const helmetContext = {};
-    if (this.state.isLoading) {
+    const { isLoading } = this.state;
+    if (isLoading) {
       return (
-        <div
-          className='d-flex justify-content-center loading'
-          style={{ marginTop: 350 }}
-        >
+        <div className="d-flex justify-content-center loading" style={{ marginTop: 350 }}>
           <Loader />
         </div>
       );
@@ -168,11 +165,12 @@ class Profile extends Component {
                       </p>
                       <hr />
                       <span>Showcases</span>
+                      <br/>
                       {this.state.items.showcases
                         ? this.state.items.showcases.map((showcase, index) => (
-                            <p key={index}>
+                            <span key={index} className="showcaseSpan">
                               <a href={showcase.link}>{showcase.name}</a>
-                            </p>
+                            </span>
                           ))
                         : ''}
                     </div>
@@ -206,11 +204,32 @@ class Profile extends Component {
           </div>
           {this.state.role === 'engineer' ? (
             // engineer
-            <ProfileEngineer location={this.state.items.location} description={this.state.items.description} username={this.state.username} name={this.state.items.name} specialist={this.state.items.specialist} skills={this.state.items.skills} email={this.state.items.email} expected_salary={this.state.items.expected_salary} no_contact={this.state.items.no_contact} photo={this.state.items.photo} date_of_birth={this.state.items.date_of_birth.split("T")} />
+            <ProfileEngineer
+              location={this.state.items.location}
+              description={this.state.items.description}
+              username={this.state.username}
+              name={this.state.items.name}
+              specialist={this.state.items.specialist}
+              skills={this.state.items.skills}
+              email={this.state.items.email}
+              expected_salary={this.state.items.expected_salary}
+              no_contact={this.state.items.no_contact}
+              photo={this.state.items.photo}
+              date_of_birth={this.state.items.date_of_birth.split('T')}
+            />
           ) : this.state.role === 'company' ? (
             /*company*/
-            <ProfileCompany user_id={this.state.user_id} location={this.state.items.location} id={this.state.items.id} description={this.state.items.description} username={this.state.username} name={this.state.items.name} email={this.state.items.email} no_contact={this.state.items.no_contact} photo={this.state.items.logo} />
-            
+            <ProfileCompany
+              user_id={this.state.user_id}
+              location={this.state.items.location}
+              id={this.state.items.id}
+              description={this.state.items.description}
+              username={this.state.username}
+              name={this.state.items.name}
+              email={this.state.items.email}
+              no_contact={this.state.items.no_contact}
+              photo={this.state.items.logo}
+            />
           ) : (
             ''
           )}
